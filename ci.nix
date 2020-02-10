@@ -11,6 +11,11 @@ builtins.mapAttrs (k: _v:
     } ''
       hello | cowsay > $out
     '';
+    tux-hello = pkgs.runCommand "tux-hello" {
+      buildInputs = [ pkgs.hello pkgs.cowsay ];
+    } ''
+      hello | cowsay -f tux > $out
+    '';
   }
 ) {
   x86_64-linux = {};
