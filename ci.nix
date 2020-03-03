@@ -16,7 +16,7 @@ builtins.mapAttrs (k: _v:
     } ''
       hello | cowsay -f tux > $out
     '';
-    stoned-tux-hello = pkgs.runCommand "tux-hello" {
+    stoned-tux-hello = pkgs.runCommand "stoned-tux-hello" {
       buildInputs = [ pkgs.hello pkgs.cowsay ];
     } ''
       hello | cowsay -s -f tux > $out
